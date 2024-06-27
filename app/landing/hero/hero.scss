@@ -1,0 +1,9 @@
+.bg-blur{
+    filter:blur(128px);
+}
+
+.bg-black-gradient{
+    background: radial-gradient(circle 1000px at 50% -60%, #394044, #0C0D0E),
+        radial-gradient(circle 100vw at 80% 20%, #284198, #0C0D0E);
+}
+
