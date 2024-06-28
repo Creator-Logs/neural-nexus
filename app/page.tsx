@@ -2,6 +2,7 @@ import Image from "next/image";
 import Nav from "./landing/navbar/navbar";
 import Hero from "./landing/hero/hero";
 import Featured from "./landing/featured/featured";
+import About from "./landing/about/about";
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
       <Nav />
       <Hero />
       <Featured />
+      <About />
     </>
   );
 }

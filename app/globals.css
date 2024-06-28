@@ -32,6 +32,7 @@
 
 body {
   background-color: rgb(var(--black));
+  overflow-x: hidden;
 }
 
 @layer utilities {

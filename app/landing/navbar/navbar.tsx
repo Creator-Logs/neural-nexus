@@ -7,7 +7,7 @@ import {
   ProductItem,
 } from "@/app/components/ui/navbar-menu";
 import { cn } from "@/utils/cn";
-import logo from "../../assets/Logo.svg";
+import logo from "../../assets/Icons/Logo.svg";
 import Image from "next/image";
 
 export default function Navbar({ className }: { className?: string }) {

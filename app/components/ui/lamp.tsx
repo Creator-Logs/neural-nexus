@@ -13,11 +13,11 @@ export const LampContainer = ({
   return (
     <div
       className={cn(
-        "relative flex min-h-screen flex-col dark:bg-black w-full rounded-md z-0",
+        "relative flex min-h-screen flex-col dark:bg-black w-full  z-0",
         className
       )}
     >
-      <div className="relative flex w-full flex-1 scale-y-125 justify-center isolate z-0 ">
+      <div className="relative flex w-full flex-1 scale-y-100 justify-center isolate z-0 ">
         <motion.div
           initial={{ opacity: 0.5, width: "15rem" }}
           whileInView={{ opacity: 1, width: "30rem" }}
@@ -50,9 +50,6 @@ export const LampContainer = ({
           <div className="absolute  w-40 h-[100%] right-0 dark:bg-black  bottom-0 z-20 [mask-image:linear-gradient(to_left,white,transparent)]" />
           <div className="absolute  w-[100%] right-0 dark:bg-black h-40 bottom-0 z-20 [mask-image:linear-gradient(to_top,white,transparent)]" />
         </motion.div>
-        <div className="absolute top-1/2 h-48 w-full translate-y-12 scale-x-150 dark:bg-black blur-2xl"></div>
-        <div className="absolute top-1/2 z-50 h-48 w-full bg-transparent opacity-10 backdrop-blur-md"></div>
-
         <motion.div
           initial={{ width: "8rem" }}
           whileInView={{ width: "16rem" }}
@@ -62,16 +59,6 @@ export const LampContainer = ({
             ease: "easeInOut",
           }}
           className="absolute inset-auto z-30 h-36 w-64 rounded-full bg-blue blur-2xl"
-        ></motion.div>
-        <motion.div
-          initial={{ width: "15rem" }}
-          whileInView={{ width: "30rem" }}
-          transition={{
-            delay: 0.3,
-            duration: 0.8,
-            ease: "easeInOut",
-          }}
-          className="absolute inset-auto z-50 h-0.5 w-[30rem] bg-sky-600 "
         ></motion.div>
 
         <div className="absolute inset-auto z-40 w-full dark:bg-black "></div>

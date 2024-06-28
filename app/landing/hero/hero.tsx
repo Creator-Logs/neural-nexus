@@ -1,11 +1,11 @@
 import Nav from "../navbar/navbar";
 import "./hero.scss";
 import Image from "next/image";
-import Instagram from "../../assets/Instagram.svg";
-import LinkedIn from "../../assets/LinkedIn.svg";
-import GitHub from "../../assets/GitHub.svg";
-import Kaggle from "../../assets/Kaggle.svg";
-import Scroll from "../../assets/Scroll.svg";
+import Instagram from "../../assets/Icons/Instagram.svg";
+import LinkedIn from "../../assets/Icons/LinkedIn.svg";
+import GitHub from "../../assets/Icons/GitHub.svg";
+import Kaggle from "../../assets/Icons/Kaggle.svg";
+import Scroll from "../../assets/Icons/Scroll.svg";
 
 export default function Hero() {
   return (
@@ -22,7 +22,7 @@ export default function Hero() {
           <h6 className="pt-10 text-blue-gray text-lg text-center font-extralight leading-none">
             By Ansh Gupta
           </h6>
-          <div className="pt-20 flex flex-col items-center justify-center hover:brightness-150">
+          <div className="mt-20 flex flex-col items-center justify-center hover:brightness-150">
             <Image
               src={Scroll}
               width={20}
