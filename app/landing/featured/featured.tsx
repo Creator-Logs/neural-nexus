@@ -12,15 +12,15 @@ export default function Featured() {
   return (
     <>
       <section className="relative w-screen h-screen dark:bg-black">
-        <div className="flex flex-col items-center pt-24">
-          <h3 className=" z-40 bg-clip-text text-transparent bg-gradient-to-t from-white to-gray text-3xl text-center tracking-tight font-semibold inline-block">
+        <div className="flex flex-col items-center pt-16">
+          <h3 className="z-40 bg-clip-text text-transparent bg-gradient-to-t from-white to-gray text-3xl text-center tracking-tighter font-semibold inline-block">
             Featured Models
           </h3>
-          <LampContainer className="pt-48 absolute bottom-0" />
-          <ul className=" flex space-x-10 mt-24">
+          <LampContainer className="pt-40 absolute bottom-0" />
+          <ul className=" flex space-x-10 mt-16">
             {featuredModels.map((item) => (
               <li key={item.id} className="">
-                <div className="relative h-96 w-96">
+                <div className="relative h-80 w-80">
                   <Image
                     src={item.img}
                     alt="background image"
@@ -57,7 +57,7 @@ export default function Featured() {
               </li>
             ))}
           </ul>
-          <button className="mt-12 z-30 px-8 py-2 rounded-lg border border-black bg-white text-black hover:opacity-[0.8] text-base transition duration-200">
+          <button className="mt-16 z-30 px-8 py-2 rounded-lg border border-black bg-white text-black hover:opacity-[0.8] text-base transition duration-200">
             Explore Models
           </button>
         </div>
