@@ -22,7 +22,10 @@ export default function Hero() {
           <h6 className="pt-10 text-blue-gray text-lg text-center font-extralight leading-none">
             By Ansh Gupta
           </h6>
-          <div className="mt-20 flex flex-col items-center justify-center hover:brightness-150">
+          <a
+            href="#featured-models"
+            className="mt-20 flex flex-col items-center justify-center hover:brightness-150"
+          >
             <Image
               src={Scroll}
               width={20}
@@ -31,7 +34,7 @@ export default function Hero() {
               className="flex-shrink-0"
             />
             <p className="text-gray font-extralight">Scroll</p>
-          </div>
+          </a>
         </div>
         <div className="absolute flex items-center justify-center flex-col top-2/3 left-10 space-y-4">
           <a>

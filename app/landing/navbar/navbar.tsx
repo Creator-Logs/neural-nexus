@@ -31,8 +31,8 @@ export default function Navbar({ className }: { className?: string }) {
           <div className="flex justify-center space-x-6">
             <MenuItem setActive={setActive} active={active} item="Home">
               <div className="flex flex-col space-y-2 text-sm">
-                <HoveredLink href="/web-dev">Latest Models</HoveredLink>
-                <HoveredLink href="/interface-design">About</HoveredLink>
+                <HoveredLink href="#featured-models">Latest Models</HoveredLink>
+                <HoveredLink href="#about">About</HoveredLink>
               </div>
             </MenuItem>
             <MenuItem setActive={setActive} active={active} item="Models">

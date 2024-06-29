@@ -30,6 +30,10 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: rgb(var(--black));
   overflow-x: hidden;

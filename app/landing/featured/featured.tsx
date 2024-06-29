@@ -11,12 +11,15 @@ import Image from "next/image";
 export default function Featured() {
   return (
     <>
-      <section className="relative w-screen h-screen dark:bg-black">
-        <div className="flex flex-col items-center pt-16">
+      <section
+        id="featured-models"
+        className="sticky top-0 w-screen h-screen dark:bg-black"
+      >
+        <div className="relative flex flex-col items-center pt-32 ">
           <h3 className="z-40 bg-clip-text text-transparent bg-gradient-to-t from-white to-gray text-3xl text-center tracking-tighter font-semibold inline-block">
             Featured Models
           </h3>
-          <LampContainer className="pt-40 absolute bottom-0" />
+          <LampContainer className="pt-96 absolute bottom-0" />
           <ul className=" flex space-x-10 mt-16">
             {featuredModels.map((item) => (
               <li key={item.id} className="">

@@ -3,9 +3,12 @@ import "./about.scss";
 export default function About() {
   return (
     <>
-      <section className="w-screen h-screen dark:bg-white">
+      <section
+        id="about"
+        className="relative z-50 w-screen h-screen dark:bg-white"
+      >
         <div className="p-32 flex flex-col justify-center">
-          <h3 className="z-40 text-black text-3xl text-center tracking-tighter font-semibold inline-block">
+          <h3 className=" text-black text-3xl text-center tracking-tighter font-semibold inline-block">
             About Neural Nexus
           </h3>
           <div className="pt-12 flex space-x-12">

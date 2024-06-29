@@ -7,7 +7,7 @@ import Kaggle from "../../assets/Icons/Kaggle.svg";
 
 export default function Footer() {
   return (
-    <section className="dark:bg-white w-screen h-80">
+    <section className="relative z-50 dark:bg-white w-screen h-80">
       <div className="flex px-32 pt-12 justify-between">
         <div className="flex">
           <Image
