@@ -10,7 +10,7 @@ export const models = [
     img: ImageCaptioning,
     url: "/",
     isDark: false,
-    value: "MM",
+    value: "Computer Vision",
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ export const models = [
     img: LLMTextClassification,
     url: "/",
     isDark: false,
-    value: "NLP",
+    value: "Natural Language",
   },
   {
     id: 3,
@@ -28,6 +28,6 @@ export const models = [
     img: BirdClassification,
     url: "/",
     isDark: true,
-    value: "CV",
+    value: "Computer Vision",
   },
 ];

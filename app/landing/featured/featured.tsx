@@ -10,62 +10,57 @@ import Image from "next/image";
 
 export default function Featured() {
   return (
-    <>
-      <section
-        id="featured-models"
-        className="sticky top-0 w-screen h-screen dark:bg-black"
-      >
-        <div className="relative flex flex-col items-center pt-32 ">
-          <h3 className="z-40 bg-clip-text text-transparent bg-gradient-to-t from-white to-gray text-3xl text-center tracking-tighter font-semibold inline-block">
-            Featured Models
-          </h3>
-          <LampContainer className="pt-96 absolute bottom-0" />
-          <ul className=" flex space-x-10 mt-16">
-            {featuredModels.map((item) => (
-              <li key={item.id} className="">
-                <div className="relative h-80 w-80">
-                  <Image
-                    src={item.img}
-                    alt="background image"
-                    className="z-10 absolute h-full object-cover rounded-lg overflow-clip"
-                  />
-                  <div className="h-full flex flex-col justify-between relative z-20 p-4">
-                    <div>
-                      <h6
-                        className={`${
-                          item.isDark ? "text-blue-gray" : "text-white"
-                        } text-base font-medium tracking-tight leading-tight pb-2`}
-                      >
-                        {item.title}
-                      </h6>
-                      <h5
-                        className={`${
-                          item.isDark ? "text-white" : "text-black"
-                        } text-xl font-medium tracking-tight leading-tight`}
-                      >
-                        {item.description}
-                      </h5>
-                    </div>
-                    <div className="flex justify-center align-center h-20 w-20 rounded-full border border-white/[0.3] dark:bg-black/[0.6] backdrop-blur-sm m-2">
-                      <Image
-                        src={Arrow}
-                        alt="Arrow"
-                        height={26}
-                        width={26}
-                        className=""
-                      />
-                    </div>
+    <section id="featured-models" className=" w-screen h-screen dark:bg-black">
+      <div className="relative flex flex-col items-center pt-32 ">
+        <h3 className="z-40 bg-clip-text text-transparent bg-gradient-to-t from-white to-gray text-3xl text-center tracking-tighter font-semibold inline-block">
+          Featured Models
+        </h3>
+        <LampContainer className="pt-96 absolute bottom-0" />
+        <ul className=" flex space-x-10 mt-16">
+          {featuredModels.map((item) => (
+            <li key={item.id} className="">
+              <div className="relative h-80 w-80">
+                <Image
+                  src={item.img}
+                  alt="background image"
+                  className="z-10 absolute h-full object-cover rounded-lg overflow-clip"
+                />
+                <div className="h-full flex flex-col justify-between relative z-20 p-4">
+                  <div>
+                    <h6
+                      className={`${
+                        item.isDark ? "text-blue-gray" : "text-white"
+                      } text-base font-medium tracking-tight leading-tight pb-2`}
+                    >
+                      {item.title}
+                    </h6>
+                    <h5
+                      className={`${
+                        item.isDark ? "text-white" : "text-black"
+                      } text-xl font-medium tracking-tight leading-tight`}
+                    >
+                      {item.description}
+                    </h5>
+                  </div>
+                  <div className="hover:rotate-45 transition-all flex justify-center align-center h-20 w-20 rounded-full border border-white/[0.3] dark:bg-black/[0.6] backdrop-blur-sm m-2">
+                    <Image
+                      src={Arrow}
+                      alt="Arrow"
+                      height={26}
+                      width={26}
+                      className=""
+                    />
                   </div>
                 </div>
-              </li>
-            ))}
-          </ul>
-          <button className="mt-16 z-30 px-8 py-2 rounded-lg border border-black bg-white text-black hover:opacity-[0.8] text-base transition duration-200">
-            Explore Models
-          </button>
-        </div>
-      </section>
-    </>
+              </div>
+            </li>
+          ))}
+        </ul>
+        <button className="mt-16 z-30 px-8 py-2 rounded-lg border border-black bg-white text-black hover:opacity-[0.8] text-base transition duration-200">
+          Explore Models
+        </button>
+      </div>
+    </section>
   );
 }
 

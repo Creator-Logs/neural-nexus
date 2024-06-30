@@ -44,7 +44,7 @@ export default function ModelsGallery() {
         {models
           .filter((item) => activeTab === "All" || activeTab === item.value)
           .map((item) => (
-            <div key={item.id} className="relative h-96 w-96 transition-all ">
+            <div key={item.id} className="relative h-100 w-96 transition-all ">
               <Image
                 src={item.img}
                 alt="background image"
@@ -66,8 +66,13 @@ export default function ModelsGallery() {
                   >
                     {item.description}
                   </h5>
+                  <div className="mt-3">
+                    <p className="text-white/[0.8] font-extralight py-1.5 px-3.5 rounded-full bg-black/[0.4] backdrop-blur-sm w-max">
+                      {item.value}
+                    </p>
+                  </div>
                 </div>
-                <div className="flex justify-center align-center h-20 w-20 rounded-full border border-white/[0.3] dark:bg-black/[0.6] backdrop-blur-sm m-2">
+                <div className="flex justify-center align-center h-20 w-20 rounded-full border border-white/[0.3] dark:bg-black/[0.6] backdrop-blur-sm m-2 hover:rotate-45 transition-all">
                   <Image src={Arrow} alt="Arrow" height={26} width={26} />
                 </div>
               </div>
@@ -82,21 +87,21 @@ const categories = [
   {
     id: 1,
     title: "Computer Vision",
-    value: "CV",
+    value: "Computer Vision",
   },
   {
     id: 2,
     title: "Natural Language",
-    value: "NLP",
+    value: "Natural Language",
   },
   {
     id: 3,
     title: "Multi-Modal",
-    value: "MM",
+    value: "Multi-Modal",
   },
   {
     id: 4,
     title: "Tabular",
-    value: "TD",
+    value: "Tabular",
   },
 ];

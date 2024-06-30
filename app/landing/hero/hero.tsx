@@ -36,7 +36,11 @@ export default function Hero() {
           </a>
         </div>
         <div className="absolute flex items-center justify-center flex-col top-2/3 left-10 space-y-4">
-          <a>
+          <a
+            href="https://www.instagram.com/creatorlogs/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Image
               src={Instagram}
               width={27}
@@ -45,7 +49,11 @@ export default function Hero() {
               className="flex-shrink-0 hover:brightness-150"
             />
           </a>
-          <a>
+          <a
+            href="https://www.linkedin.com/in/ansh-gupta-542613255/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Image
               src={LinkedIn}
               width={27}
@@ -54,7 +62,11 @@ export default function Hero() {
               className="flex-shrink-0 hover:brightness-150"
             />
           </a>
-          <a>
+          <a
+            href="https://www.kaggle.com/anshkami"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Image
               src={Kaggle}
               width={27}
@@ -63,7 +75,11 @@ export default function Hero() {
               className="flex-shrink-0 hover:brightness-150"
             />
           </a>
-          <a>
+          <a
+            href="https://github.com/Creator-Logs"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Image
               src={GitHub}
               width={27}
