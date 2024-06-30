@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 const transition = {
   type: "spring",
@@ -18,14 +18,17 @@ export const MenuItem = ({
   active,
   item,
   children,
+  page,
 }: {
   setActive: (item: string) => void;
+  page: string;
   active: string | null;
   item: string;
   children?: React.ReactNode;
 }) => {
   return (
-    <div
+    <a
+      href={page}
       onMouseEnter={() => setActive(item)}
       className="flex relative justify-center items-center"
     >
@@ -60,7 +63,7 @@ export const MenuItem = ({
           )}
         </motion.div>
       )}
-    </div>
+    </a>
   );
 };
 
@@ -90,19 +93,19 @@ export const ProductItem = ({
   title: string;
   description: string;
   href: string;
-  src: string;
+  src: StaticImageData;
 }) => {
   return (
-    <Link href={href} className="flex space-x-2">
+    <Link href={href} className="flex space-x-2.5">
       <Image
         src={src}
-        width={140}
-        height={70}
+        width={100}
+        height={100}
         alt={title}
-        className="flex-shrink-0 rounded-md shadow-2xl"
+        className="flex-shrink-0 rounded-md object-cover"
       />
       <div>
-        <h4 className="text-xl font-bold mb-1 text-black dark:text-white">
+        <h4 className="text-lg font-semibold mb-1 text-black dark:text-white">
           {title}
         </h4>
         <p className="text-neutral-700 text-sm max-w-[10rem] dark:text-neutral-300">

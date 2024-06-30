@@ -1,9 +1,9 @@
-import logo from "../../assets/Icons/Logo-Black.svg";
+import logo from "../../../assets/Icons/Logo-Black.svg";
 import Image from "next/image";
-import Instagram from "../../assets/Icons/Instagram.svg";
-import LinkedIn from "../../assets/Icons/LinkedIn.svg";
-import GitHub from "../../assets/Icons/GitHub.svg";
-import Kaggle from "../../assets/Icons/Kaggle.svg";
+import Instagram from "../../../assets/Icons/Instagram.svg";
+import LinkedIn from "../../../assets/Icons/LinkedIn.svg";
+import GitHub from "../../../assets/Icons/GitHub.svg";
+import Kaggle from "../../../assets/Icons/Kaggle.svg";
 
 export default function Footer() {
   return (

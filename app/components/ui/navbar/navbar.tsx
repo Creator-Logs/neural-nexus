@@ -7,8 +7,9 @@ import {
   ProductItem,
 } from "@/app/components/ui/navbar-menu";
 import { cn } from "@/utils/cn";
-import logo from "../../assets/Icons/Logo.svg";
+import logo from "../../../assets/Icons/Logo.svg";
 import Image from "next/image";
+import { featuredModels } from "@/app/landing/featured/featured";
 
 export default function Navbar({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
@@ -16,7 +17,7 @@ export default function Navbar({ className }: { className?: string }) {
     <>
       <div
         className={cn(
-          "fixed top-10 inset-x-0 max-w-sm mx-auto z-50",
+          "fixed top-10 inset-x-0 max-w-sm mx-auto highest",
           className
         )}
       >
@@ -29,15 +30,33 @@ export default function Navbar({ className }: { className?: string }) {
             className="flex-shrink-0 rounded-md shadow-2xl pl-2"
           />
           <div className="flex justify-center space-x-6">
-            <MenuItem setActive={setActive} active={active} item="Home">
+            <MenuItem
+              page="/"
+              setActive={setActive}
+              active={active}
+              item="Home"
+            >
               <div className="flex flex-col space-y-2 text-sm">
                 <HoveredLink href="#featured-models">Latest Models</HoveredLink>
                 <HoveredLink href="#about">About</HoveredLink>
               </div>
             </MenuItem>
-            <MenuItem setActive={setActive} active={active} item="Models">
-              <div className="text-sm grid grid-cols-2 gap-10 p-4">
-                <ProductItem
+            <MenuItem
+              page="/models"
+              setActive={setActive}
+              active={active}
+              item="Models"
+            >
+              <div className="text-sm grid grid-cols-2 gap-x-2 gap-y-6 p-4">
+                {featuredModels.map((item) => (
+                  <ProductItem
+                    title={item.title}
+                    href={item.url}
+                    src={item.img}
+                    description={item.description}
+                  />
+                ))}
+                {/* <ProductItem
                   title="Algochurn"
                   href="https://algochurn.com"
                   src="https://assets.aceternity.com/demos/algochurn.webp"
@@ -60,7 +79,7 @@ export default function Navbar({ className }: { className?: string }) {
                   href="https://userogue.com"
                   src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.47.07%E2%80%AFPM.png"
                   description="Respond to government RFPs, RFIs and RFQs 10x faster using AI"
-                />
+                /> */}
               </div>
             </MenuItem>
           </div>

@@ -1,5 +1,4 @@
-import Nav from "../navbar/navbar";
-import "./hero.scss";
+import Nav from "../../components/ui/navbar/navbar";
 import Image from "next/image";
 import Instagram from "../../assets/Icons/Instagram.svg";
 import LinkedIn from "../../assets/Icons/LinkedIn.svg";
@@ -10,7 +9,7 @@ import Scroll from "../../assets/Icons/Scroll.svg";
 export default function Hero() {
   return (
     <>
-      <section className="flex w-screen h-screen bg-black-gradient items-center justify-center">
+      <section className="z-40 relative flex w-screen h-screen bg-black-gradient items-center justify-center">
         <div className="absolute -right-20 top-1/4 dark:bg-purple rounded-full border w-48 h-64 opacity-75 bg-blur"></div>
         <div className="flex flex-col justify-center items-center">
           <h5 className="bg-clip-text text-transparent bg-gradient-to-r from-teal to-blue text-xl text-center tracking-tighter inline-block">
