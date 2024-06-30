@@ -50,6 +50,7 @@ export default function Navbar({ className }: { className?: string }) {
               <div className="text-sm grid grid-cols-2 gap-x-2 gap-y-6 p-4">
                 {featuredModels.map((item) => (
                   <ProductItem
+                    key={item.id}
                     title={item.title}
                     href={item.url}
                     src={item.img}
