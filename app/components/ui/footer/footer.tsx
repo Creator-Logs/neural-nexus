@@ -1,6 +1,7 @@
 import logo from "../../../assets/Icons/Logo-Gray.svg";
 import Image from "next/image";
 import FooterCredit from "../../../assets/Icons/FooterCredit.svg";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -68,11 +69,17 @@ export default function Footer() {
               </h1>
             </div>
           </div>
-          <Image
-            className="flex-shrink-0 pb-4"
-            alt="creation credit"
-            src={FooterCredit}
-          />
+          <Link
+            target="_blank"
+            rel="noopener noreferrer"
+            href="http://www.xenithstudio.com"
+          >
+            <Image
+              className="flex-shrink-0 pb-4"
+              alt="creation credit"
+              src={FooterCredit}
+            />
+          </Link>
         </div>
       </div>
     </section>

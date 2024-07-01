@@ -64,7 +64,7 @@ export default function Navbar({ className }: { className?: string }) {
           </div>
           <a
             href="/contact"
-            className="px-8 py-2 rounded-lg  bg-white text-black hover:opacity-[0.8] text-base transition duration-200"
+            className="px-8 py-2 rounded-lg bg-white text-black hover:opacity-[0.8] text-base transition duration-200"
           >
             Contact
           </a>
