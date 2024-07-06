@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { models } from "../models/model_data";
 import Arrow from "../assets/Icons/Arrow.svg";
+import Link from "next/link";
 
 import { useState } from "react";
 
@@ -72,9 +73,12 @@ export default function ModelsGallery() {
                     </p>
                   </div>
                 </div>
-                <div className="flex justify-center align-center h-20 w-20 rounded-full border border-white/[0.3] dark:bg-black/[0.6] backdrop-blur-sm m-2 hover:rotate-45 transition-all">
+                <Link
+                  href={item.url}
+                  className="flex justify-center align-center h-20 w-20 rounded-full border border-white/[0.3] dark:bg-black/[0.6] backdrop-blur-sm m-2 hover:rotate-45 transition-all"
+                >
                   <Image src={Arrow} alt="Arrow" height={26} width={26} />
-                </div>
+                </Link>
               </div>
             </div>
           ))}
