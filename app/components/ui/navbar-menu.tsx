@@ -38,7 +38,7 @@ export const MenuItem = ({
       >
         {item}
       </motion.p>
-      {active !== null && (
+      {active !== null && children && (
         <motion.div
           initial={{ scale: 0.85, y: 0 }}
           animate={{ scale: 1, y: 10 }}

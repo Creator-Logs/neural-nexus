@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <section className=" relative z-50 bg-dark-gray-gradient w-screen h-small">
       <div className="flex flex-col justify-end h-full pb-8">
-        <div className="flex px-32 pb-12 justify-between items-center">
+        <div className="flex px-32 pb-32 justify-between items-center">
           <div>
             <h3 className="mb-8 text-3xl leading-none tracking-tighter font-medium text-white">
               Reach Out to Me

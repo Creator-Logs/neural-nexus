@@ -9,7 +9,6 @@ import {
 import { cn } from "@/utils/cn";
 import logo from "../../../assets/Icons/Logo.svg";
 import Image from "next/image";
-import { featuredModels } from "@/app/landing/featured/featured";
 
 export default function Navbar({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
@@ -48,19 +47,7 @@ export default function Navbar({ className }: { className?: string }) {
               setActive={setActive}
               active={active}
               item="Models"
-            >
-              <div className="text-sm grid grid-cols-2 gap-x-2 gap-y-6 p-4">
-                {featuredModels.map((item) => (
-                  <ProductItem
-                    key={item.id}
-                    title={item.title}
-                    href={item.url}
-                    src={item.img}
-                    description={item.description}
-                  />
-                ))}
-              </div>
-            </MenuItem>
+            ></MenuItem>
           </div>
           <a
             href="/contact"
