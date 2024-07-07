@@ -16,7 +16,7 @@ export default function Navbar({ className }: { className?: string }) {
     <>
       <div
         className={cn(
-          "fixed top-10 inset-x-0 max-w-sm mx-auto highest",
+          "fixed top-8 inset-x-0 max-w-sm mx-auto highest",
           className
         )}
       >

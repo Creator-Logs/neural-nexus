@@ -3,7 +3,7 @@ import Footer from "../components/ui/footer/footer";
 import Navbar from "../components/ui/navbar/navbar";
 import { Label } from "../components/ui/label";
 import { Input } from "../components/ui/input";
-import { cn } from "@/utils/cn";
+import { cn } from "../../utils/cn";
 import { Textarea } from "../components/ui/textarea";
 import Link from "next/link";
 

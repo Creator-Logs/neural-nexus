@@ -1,4 +1,4 @@
-import {nextui} from '@nextui-org/theme';
+import { nextui } from "@nextui-org/theme";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -6,11 +6,12 @@ const config: Config = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./node_modules/@nextui-org/theme/dist/components/[object Object].js"
+    "./node_modules/@nextui-org/theme/dist/components/[object Object].js",
   ],
   theme: {
     extend: {
       colors: {
+        "dark-blue-gray": "#728D8F",
         teal: "#23A1A1",
         black: "#0C0D0E",
         "dark-gray": "#26292B",
@@ -19,6 +20,7 @@ const config: Config = {
         "blue-gray": "#BAC9CA",
         gray: "#616A6B",
         purple: "#4032E2",
+        "light-blue-gray": "#E9EEEF",
       },
       fontFamily: {
         sans: ["Inter", "sans-serif"],

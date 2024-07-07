@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { models } from "../models/model_data";
+import { models } from "./model_data";
 import Arrow from "../assets/Icons/Arrow.svg";
 import Link from "next/link";
 
@@ -49,7 +49,7 @@ export default function ModelsGallery() {
               <Image
                 src={item.img}
                 alt="background image"
-                className="z-10 absolute h-full object-cover rounded-lg overflow-clip"
+                className="z-10 absolute rounded-lg w-full object-cover h-full overflow-clip"
               />
               <div className="h-full flex flex-col justify-between relative z-20 p-4">
                 <div>
