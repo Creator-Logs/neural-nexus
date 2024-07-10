@@ -60,9 +60,12 @@ export default function Featured() {
             </li>
           ))}
         </ul>
-        <button className="mt-16 z-30 px-8 py-2 rounded-lg border border-black bg-white text-black hover:opacity-[0.8] text-base transition duration-200">
+        <Link
+          href="/models"
+          className="mt-16 z-30 px-8 py-2 rounded-lg border border-black bg-white text-black hover:opacity-[0.8] text-base transition duration-200"
+        >
           Explore Models
-        </button>
+        </Link>
       </div>
     </section>
   );

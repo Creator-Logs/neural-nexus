@@ -11,38 +11,69 @@ import React from "react";
 import { Progress } from "@/app/components/ui/progress";
 import Link from "../../../assets/Icons/Link.svg";
 import Image from "next/image";
+import axios from "axios";
 
 export default function Model() {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  //Initializing Variable to display model prediction
+  const [text, setText] = useState<string>("");
+  const [studentPrediction, setStudentPrediction] = useState(0);
+  const [AIPrediction, setAIPrediction] = useState(0);
+  const Preds = [
+    { id: 1, class: "Large-Language Model", prediction: AIPrediction },
+    { id: 2, class: "Student", prediction: studentPrediction },
+  ];
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Form submitted");
+    try {
+      if (text === "") {
+        setStudentPrediction(0);
+        setAIPrediction(0);
+      } else {
+        const response = await axios.post(
+          "http://localhost:8000/ai-text-predict/",
+          {
+            text: text,
+          }
+        );
+        setAIPrediction(response.data.confidence.toFixed(1));
+        const studentPred = 100 - response.data.confidence.toFixed(1);
+        setStudentPrediction(Number(studentPred.toFixed(1)));
+
+        console.log(response.data);
+      }
+    } catch (error) {
+      console.log("prediction request failed: ", error);
+    }
   };
-  const [text, setText] = useState<string>(""); // State variable with string type
-  const maxWords: number = 1000; // Maximum word limit
+
+  //Handling text area input (validation and rules)
+  const maxWords: number = 1000;
   const handleChange = (event: ChangeEvent<HTMLTextAreaElement>): void => {
     const newText: string = event.target.value;
-    // Split text by spaces to count words
     const words: string[] = newText.trim().split(/\s+/);
     if (words.length <= maxWords) {
       setText(newText);
     } else {
-      // Truncate text if word limit exceeded
       setText(words.slice(0, maxWords).join(" "));
     }
   };
   const handlePaste = (event: ClipboardEvent<HTMLTextAreaElement>): void => {
     event.preventDefault();
     const pasteText: string = event.clipboardData.getData("text");
-    // Combine current text and pasted text
     const newText: string = text + pasteText;
-    // Split combined text by spaces to count words
-    const words: string[] = newText.trim().split(/\s+/).slice(0, maxWords);
-    setText(words.join(" "));
+    const paragraphs: string[] = newText.trim().split(/\n\s*\n|\r\n\s*\r\n/);
+    const processedParagraphs: string[] = paragraphs.map((paragraph) => {
+      const words: string[] = paragraph.split(/\s+/);
+      return words.slice(0, maxWords).join(" ");
+    });
+
+    // Join paragraphs back with double line breaks
+    setText(processedParagraphs.join("\n\n"));
   };
   const handleKeyDown = (
     event: React.KeyboardEvent<HTMLTextAreaElement>
   ): void => {
-    // Prevent space, enter, and tab key presses if word limit is reached
     const words: string[] = text.trim().split(/\s+/);
     if (words.length >= maxWords) {
       if (event.key === " " || event.key === "Enter" || event.key === "Tab") {
@@ -178,11 +209,6 @@ const LabelInputContainer = ({
     </div>
   );
 };
-
-const Preds = [
-  { id: 1, class: "Large-Language Model", prediction: 0 },
-  { id: 2, class: "Student", prediction: 0 },
-];
 
 const Content = [
   {
