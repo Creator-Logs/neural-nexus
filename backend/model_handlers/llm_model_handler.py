@@ -17,7 +17,7 @@ model_parts = [
     "model_part_ag"
 ]
 
-reassembled_model_path = "/tmp/DistilRoBERTa-LLMClassification.pth"
+reassembled_model_path = "models/DistilRoBERTa-LLMClassification/DistilRoBERTa-LLMClassification.pth"
 
 def reassemble_model():
     with open(reassembled_model_path, 'wb') as outfile:
@@ -29,7 +29,7 @@ def reassemble_model():
 reassemble_model()
 MAX_LEN = 512
 
-model = torch.load('/tmp/DistilRoBERTa-LLMClassification.pth')
+model = torch.load('models/DistilRoBERTa-LLMClassification/DistilRoBERTa-LLMClassification.pth')
 tokenizer = RobertaTokenizer.from_pretrained('roberta-base')
 
 def clean_text(text, stem=True):
