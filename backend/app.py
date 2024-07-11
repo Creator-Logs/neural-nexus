@@ -23,10 +23,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# def startup_event():
-#     llm_model_handler.reassemble_model()
+def startup_event():
+    llm_model_handler.reassemble_model()
 
-# app.add_event_handler("startup", startup_event)
+app.add_event_handler("startup", startup_event)
 
 @app.get("/")
 async def index():
