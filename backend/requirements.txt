@@ -2,4 +2,4 @@ fastapi==0.111.0
 pydantic==2.8.2
 torch==2.2.2
 transformers==4.42.3
-uvicorn
+uvicorn==0.30.1
