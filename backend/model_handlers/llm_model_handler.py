@@ -24,7 +24,9 @@ def reassemble_model():
         for part in model_parts:
             with open(os.path.join(model_parts_dir, part), 'rb') as infile:
                 outfile.write(infile.read())
-
+                
+                
+reassemble_model()
 MAX_LEN = 512
 
 model = torch.load('/tmp/DistilRoBERTa-LLMClassification.pth')
