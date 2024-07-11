@@ -11,7 +11,7 @@ app = FastAPI()
 origins = [
     "http://localhost",
     "http://localhost:3000",
-    "https://theneuralnexus.vercel.app/"
+    "https://theneuralnexus.vercel.app/",
     "https://theneuralnexus.vercel.app"
 ]
 
