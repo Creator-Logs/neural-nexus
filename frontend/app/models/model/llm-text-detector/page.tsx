@@ -31,7 +31,7 @@ export default function Model() {
         setAIPrediction(0);
       } else {
         const response = await axios.post(
-          "http://localhost:8000/ai-text-predict/",
+          "https://neural-nexus-backend.vercel.app/ai-text-predict/",
           {
             text: text,
           }
