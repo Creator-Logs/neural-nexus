@@ -2,7 +2,6 @@ from fastapi import FastAPI, HTTPException
 from model_handlers import llm_model_handler
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
-import uvicorn
 
 class InputData(BaseModel):
     text: str
@@ -30,11 +29,11 @@ app.add_middleware(
 # app.add_event_handler("startup", startup_event)
 
 @app.get("/")
-def index():
+async def index():
     return {"message": "hello"}
     
 @app.post("/ai-text-predict/")
-def predict(input_data: InputData):
+async def predict(input_data: InputData):
     text = input_data.text
     try:
         preds = llm_model_handler.predict(text)
