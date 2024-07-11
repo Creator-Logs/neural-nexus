@@ -2,11 +2,32 @@ import torch
 import torch.nn as nn
 from transformers import RobertaTokenizer
 import re
+import os
 
+model_parts_dir = "models/DistilRoBERTa-LLMClassification/"
+
+model_parts = [
+    "model_part_aa",
+    "model_part_ab",
+    "model_part_ac",
+    "model_part_ad",
+    "model_part_ae",
+    "model_part_af",
+    "model_part_ag"
+]
+
+reassembled_model_path = "/tmp/DistilRoBERTa-LLMClassification.pth"
+
+def reassemble_model():
+    with open(reassembled_model_path, 'wb') as outfile:
+        for part in model_parts:
+            with open(os.path.join(model_parts_dir, part), 'rb') as infile:
+                outfile.write(infile.read())
 
 MAX_LEN = 512
 
-model = torch.load('models/DistilRoBERTa-LLMClassification.pth')
+reassemble_model()
+model = torch.load('/tmp/DistilRoBERTa-LLMClassification.pth')
 tokenizer = RobertaTokenizer.from_pretrained('roberta-base')
 
 def clean_text(text, stem=True):
@@ -47,3 +68,5 @@ def predict(text):
         predicted_class = classes[predicted_class.item()]
         return({"prediction": (predicted_class), "confidence": round(confidence, 2)})
     
+pred = predict("helo")
+print(pred)

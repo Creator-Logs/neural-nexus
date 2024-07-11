@@ -21,6 +21,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+def startup_event():
+    llm_model_handler.reassemble_model()
+
+app.add_event_handler("startup", startup_event)
+
 @app.post("/ai-text-predict/")
 def predict(input_data: InputData):
     text = input_data.text
