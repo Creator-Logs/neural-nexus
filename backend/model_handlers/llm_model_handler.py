@@ -68,5 +68,3 @@ def predict(text):
         predicted_class = classes[predicted_class.item()]
         return({"prediction": (predicted_class), "confidence": round(confidence, 2)})
     
-pred = predict("helo")
-print(pred)
