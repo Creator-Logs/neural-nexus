@@ -3,8 +3,7 @@ import torch.nn as nn
 from transformers import RobertaTokenizer
 import re
 import os
-import pickle
-import gzip
+
 
 model_parts_dir = "models/DistilRoBERTa-LLMClassification/"
 
@@ -69,4 +68,3 @@ def predict(text):
         predicted_class = classes[predicted_class.item()]
         return({"prediction": (predicted_class), "confidence": round(confidence, 2)})
     
-

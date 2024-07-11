@@ -2,6 +2,8 @@
 
 # dependencies
 **/*.pth
+**/*.pem
+
 /node_modules
 /.pnp
 .pnp.js
@@ -28,6 +30,8 @@ yarn-error.log*
 
 # local env files
 .env*.local
+
+**/*commands.txt
 
 # vercel
 .vercel
