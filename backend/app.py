@@ -11,15 +11,15 @@ app = FastAPI()
 origins = [
     "http://localhost",
     "http://localhost:3000",
-    "https://neural-nexus-backend.vercel.app/",
     "https://theneuralnexus.vercel.app/"
+    "https://theneuralnexus.vercel.app"
 ]
 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
     allow_credentials=True,
-    allow_methods=["POST"],
+    allow_methods=["POST", "GET", "PUT"],
     allow_headers=["*"],
 )
 
