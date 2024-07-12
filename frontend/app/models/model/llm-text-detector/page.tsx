@@ -9,9 +9,8 @@ import { Textarea } from "../../../components/ui/textarea";
 import { useState, ChangeEvent, ClipboardEvent } from "react";
 import React from "react";
 import { Progress } from "@/app/components/ui/progress";
-import Link from "../../../assets/Icons/Link.svg";
-import Image from "next/image";
 import axios from "axios";
+import https from "https";
 
 export default function Model() {
   //Initializing Variable to display model prediction
@@ -23,6 +22,12 @@ export default function Model() {
     { id: 2, class: "Student", prediction: studentPrediction },
   ];
 
+  const instance = axios.create({
+    httpsAgent: new https.Agent({
+      rejectUnauthorized: false,
+    }),
+  });
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
@@ -30,12 +35,13 @@ export default function Model() {
         setStudentPrediction(0);
         setAIPrediction(0);
       } else {
-        const response = await axios.post(
-          "https://54.253.67.121/ai-text-predict/",
+        const response = await instance.post(
+          "https://3.27.245.8/ai-text-predict/",
           {
             text: text,
           }
         );
+
         setAIPrediction(response.data.confidence.toFixed(1));
         const studentPred = 100 - response.data.confidence.toFixed(1);
         setStudentPrediction(Number(studentPred.toFixed(1)));
@@ -43,7 +49,7 @@ export default function Model() {
         console.log(response.data);
       }
     } catch (error) {
-      console.log("prediction request failed: ", error);
+      console.log("Prediction request failed: ", error);
     }
   };
 
