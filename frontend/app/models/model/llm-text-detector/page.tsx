@@ -36,7 +36,7 @@ export default function Model() {
         setAIPrediction(0);
       } else {
         const response = await instance.post(
-          "https://3.27.245.8/ai-text-predict/",
+          "https://creatorlogs.com/ai-text-predict/",
           {
             text: text,
           }
