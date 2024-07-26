@@ -4,10 +4,12 @@ import Hero from "./landing/hero/hero";
 import Featured from "./landing/featured/featured";
 import About from "./landing/about/about";
 import Footer from "./components/ui/footer/footer";
+import { Analytics } from "@vercel/analytics/react";
 
 export default function Home() {
   return (
     <>
+      <Analytics />
       <Navbar />
       <Hero />
       <Featured />
